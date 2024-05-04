@@ -1,0 +1,1742 @@
+1)pattern hollow dimend
+n=int(input())
+for i in range(1,n+1):
+    if i==1:
+       for j in range(1,n-i+1):
+            print(" ",end="")
+       for j in range(0,2*i-1):
+            print("*",end="")
+       print()
+    else:
+        for j in range(1,n-i+1):
+            print(" ",end="")
+        for j in range(0,2*i-1):
+            if j==0 or j==2*i-2:
+              print("*",end="")
+            else:
+              print(" ",end="")
+        print()
+for i in range(n-1,0,-1):
+    if i==1:
+       for j in range(1,n-i+1):
+            print(" ",end="")
+       for j in range(0,2*i-1):
+            print("*",end="")
+       print()
+    else:
+        for j in range(1,n-i+1):
+            print(" ",end="")
+        for j in range(0,2*i-1):
+            if j==0 or j==2*i-2:
+              print("*",end="")
+            else:
+              print(" ",end="")
+        print()   
+output:
+ 4
+       *
+      * * 
+     *   *
+    *     *
+     *   *
+      * *
+       *
+
+2)
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n-i+1):
+            print(" ",end="")
+    for j in range(0,2*i-1):
+            print("*",end="")
+    for j in range(1,(n-i+1)*2):
+        if j!=(n-i+1)*2-1:
+            print(" ",end="")
+    for j in range(0,2*i-1):
+            print("*",end="")
+    print()
+output:
+3
+     *    *
+    ***  ***
+   **********
+3)
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n-i+1):
+            print(" ",end="")
+    for j in range(0,2*i-1):
+            print("*",end="")
+    for j in range(1,(n-i+1)*2):
+        if j!=(n-i+1)*2-1:
+            print(" ",end="")
+    for j in range(0,2*i-1):
+            print("*",end="")
+    print()
+for i in range((2*n-1),0,-1):
+    for j in range(1,(2*n)-i):
+            print(" ",end="")
+    for j in range(0,2*i-1):
+            print("*",end="")
+    print()
+output:
+5
+    *        *
+   ***      ***
+  *****    *****
+ *******  *******
+******************
+*****************
+ ***************
+  *************
+   ***********
+    *********
+     *******
+      *****
+       ***
+        *
+***
+#Function
+ def function()
+
+***
+derived data types -- List, dictionary , set , tuple
+List--collection of different data types
+
+4)Reverse a list
+l=[1,2,3,4,5]
+print(l[::-1)]
+ouput:
+[5,4,3,2,1]
+
+5)finding max value or largest element
+l=[1,2,3,4,5]
+m=l[0]
+for i in l:
+    if i>m:               ###if i>m  (min value)
+       m=i
+print(m)
+
+6)find second largest element
+l=[1,2,3,4,5]
+p=set(1)
+q=list(p)
+
+7)finding sum of three numbers in terms of indexing
+nums=[1,3,4,5,6,8]
+target=12
+def threesum(nums,target):
+     a=[]
+     for i in range(len(nums)):
+         for j in range(i+1,len(nums)):
+             for k in range(j+1,len(nums)):
+                 if nums[i]+nums[j]+nums[k]==target:
+                      a.append(i)
+                      a.append(j)
+                      a.append(k)
+                      return a 
+print(threesum(nums,target))
+output:
+[0, 1, 5]
+
+8)Removing duplicate number
+l=[1,4,3,6,7,3,3]
+room=[]
+for i in l:
+    if i not in room:
+        room.append(i)
+print(room)
+output:
+[1,4,3,6,7]
+
+9)finding unique value string 
+s="aaabbbcd"
+room=""
+for i in s:
+    if i not in room:
+        room=room+i
+print(room)
+ouput:
+abcd
+
+10)finding how many time char is repeating
+s="google"
+p=set(s)
+for i in p:
+    c=0
+    for j in s:
+        if i==j:
+            c+=1 
+    print(i,"-",c)
+output:
+l-1
+g-2
+e-1
+o-2
+
+11)finding how many times digit is repeating
+s=[1,7,5,3,4,3,3,5,6]
+p=set(s)
+for i in p:
+    c=0
+    for j in s:
+        if i==j:
+            c+=1 
+    print(i,"-",c)
+ouput:
+1 - 1
+3 - 3
+4 - 1
+5 - 2
+6 - 1
+7 - 1
+
+12)adding even and odd number given list
+s=[1,7,5,3,4,3,3,5,6]
+even=0
+odd=0
+for i in s:
+        if i%2==0:
+            even=even+i
+        else:
+            odd=odd+i
+print("even=",even)
+print("odd=",odd)
+output:
+even=10
+odd=27
+
+13)find the intersection of list(find common element in 2 list)
+l1=[1,4,3,2,6]
+l2=[2,3,9,0,1,3]
+l=[]
+for i in l1:
+    if i in l2:
+         l.append(i)
+print(l)
+output:
+[1,3,2]
+
+14)find the unique element in 2 list(not common in 2 list)
+l1=[1,4,3,2,6]
+l2=[2,3,9,0,1,3]
+l=[]
+for i in l1:
+    if i not in l2:
+        l.append(i)
+for i in l2:
+    if i not in l1:
+        l.append(i)
+print(l)
+output:
+[4,6,9,0]
+
+15)find the prime number in range(using function)
+def isprime(x):
+    for i in range(2,x//2+1):
+        if x%i==0:
+            return 0
+        else:
+            return 1
+l=int(input())
+u=int(input())
+for i in range(l,u+1):
+    a=isprime(i)
+    if a==1:
+        print(i)
+input:
+1
+10
+output:
+1
+2
+3
+5
+7
+
+16)convert decimal number to binary 
+n=int(input())
+s=""
+while n>0:
+    rem=n%2
+    s=s+str(rem)
+    n=n//2
+print(s[::-1])    
+outPut:
+10  
+
+17)check if a number is a perfect square   
+n=int(input())
+i=1 
+while i**2<n:
+    i+=1 
+if i**2==n:
+    print("perfect square")
+else:
+    print("non perfect square")
+output:
+16 						15
+perfect square 				non perfect square
+
+18)check wheather the number is square of 2 or not
+n=int(input())
+i=1 
+while 2**i<n:
+    i+=1 
+if 2**i==n:
+    print("square of 2")
+else:
+    print("not a square of 2")
+output:
+512						30
+square of 2					not a square of 2
+
+19)find the number is armstrong or not
+n=int(input())
+a=0
+m=n
+d=len(str(n))
+while m>0:
+      rem=m%10
+      a=a+(rem**d)
+      m=m//10
+if a==n:
+    print("armstrong")
+else:
+    print("not a armstrong")
+output:
+371						15
+armstrong					not a armstrong
+
+20)check if a number is a perfect number
+n=int(input())
+sum=0
+i=1 
+for i in range(1,n):
+    if n%i==0:
+        sum=sum+i
+if sum==n:				 ### if sum>n  (it is an abundant number)
+    print("perfect number")
+else:
+    print("not a perfect number")
+output:
+6						14
+perfect number				not a perfect number
+
+21)check if a number is abundant number
+n=int(input())
+sum=0
+i=1 
+for i in range(1,n):
+    if n%i==0:
+        sum=sum+i
+if sum>n:
+    print("abundant number")
+else:
+    print("not a abundant number")
+output:
+12						6
+abundant number				not a abundant number
+
+********string and list************
+
+a)s="svfsdkgfdslgdkflkjuhlkjksl"
+  print(s[20:-10:-2])
+  output:
+  lu
+
+b)a=[1,2,3,4,5,6,7,8,9,10]									
+even=a[1::2]					or   		
+odd=a[-2::-2]						a=[1,2,3,4,5,6,7,8,9,10]
+l=[]								print(a[1:2]+a[-2::-2]
+l.extend(even)
+l.extend(odd)
+print(l)
+output:
+[2, 4, 6, 8, 10, 9, 7, 5, 3, 1]
+
+c)Rotation of a list or string   (left rotation)
+a=[1,2,3,4,5]
+n=2				##n=2 means rotation of 2 times
+print(a[-n::]+a[0:-n])
+output:
+[4, 5, 1, 2, 3]
+
+d)Right rotation
+a=[1,2,3,4,5]
+n=2				##n=2 means rotation of 2 times
+print(a[n::]+a[0:n])
+output:
+[3,4,5,1,2]
+
+e)check the phone no valid or not
+##conditions:----length 10 and strat with 6,7,8,9 and each string shoud be digit 
+n=str(input())
+if (len(n))==10:
+    if n[0]=='6' or n[0]=='7' or n[0]=='8' or n[0]=='9':
+        if n.isdigit():
+            print("valid")
+            exit
+        else:
+            print("invalid")
+else:
+    print("invalid")
+output:
+9876543260							1234
+valid								invalid
+
+f)Reverse the each word in a sentense
+s="hey how are you"
+l=list(s.split(" "))  ##s.split is works only in string
+l=l[::-1]		    ## it is reversig each word
+ans=" ".join(l)       
+print(ans)
+output:
+you are how hey
+
+g)reverse the each sigle letter of word and reverse the word
+s="hey how are you"
+l=list(s.split(" "))
+s=""
+for i in l:
+    s=s+i[::-1]+" "  ## " " gives the space between each word
+print(s)
+output:
+yeh woh era uoy
+
+h)check if word(include it is a capital or lower case) is palindrome or not 
+#### palindrome means first we reverse each letter in a word then if ans is equal to the input means it is a palindrome
+s="Madam"
+s1=s.upper()	 			## s.upper() is used to make all letter to upper case means capital letters and in this way we can check the word if input is upper or lower case
+if s1==s1[::-1]:
+   print("palindrome")
+else:
+   print("not a palindrome")
+output:					## if we give input as GanGa	
+palindrome					##output will be --> not a paindrome
+
+i)check given input is anagram or not
+## anagrams are strings with same character content and the character's frequency(or number) are also the same
+a=input()
+b=input()
+s=set(a)
+s2=set(b)
+if s==s2:
+  for i in s:
+      if a.count(i)!=b.count(i):
+          print("not  anagram")
+          break
+      else:
+        print("anagram")
+output:					
+god							abab
+dog							abc
+anagram						not anagram
+
+j)palindrome leet code
+class Solution:
+    def isPalindrome(self, x:int) -> bool:
+        if x<0:
+            return 0
+        else:
+            n=str(x)
+            l=str(x)
+            if n==1[::-1]:
+                return true
+            else:
+                return false
+
+ii)longest common prefix
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+       #strs=["flower","flow","flight"]
+       strs=stored(strs)
+       if len(strs)==1:
+         return strs[0]
+       ans=""
+       s=strs[0]
+       q=0
+       for i in s:
+           for j in strs:
+              if i!=j[q]:
+                 return ans
+           else:
+             ans=ans+i
+             q+=1
+       return ans    
+
+i)1108--defending an ip address
+class Solution(object):
+    def defangIPaddr(self, address):
+       a=""
+       for i in address:
+          if i==".":
+            a=a+"[.]"
+          else:
+            a=a+i
+       return a
+
+ii)2011--final value of variable after performing
+class Solution(object):
+    def finalValueAfterOperations(self, operations):
+        x=0
+        for i in operations:
+            if i[0]=="+" or i[-1]=="+":
+                x+=1
+            else:
+                x-=1
+        return x
+          
+iii)771--jewels and stones
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+       sum=0
+       for i in jewels:
+          for j in stones:
+            if i==j:
+                sum=sum+1
+       return sum
+
+**********Recursion************
+recursion run by default 1000 times it has limit and it does not run infinite times hence this is the difference between the recursion and loop
+
+a)factorial of number(it is calculating 4*3*2*1)
+def fact(x):
+    if x==1:
+        return x 
+    return x*fact(x-1)
+n=int(input())
+a=fact(n)
+print(a)
+output:
+4
+24
+
+b)factorial of number(it is calculating 1*2*3*4)
+def fact(a,x):
+    if a==x:
+      return x
+    return a*fact(a+1,x)
+n=int(input())
+a=fact(1,n)
+print(a)
+output:
+4
+24
+
+c)fibonisis of number
+def fib(x):
+    if x<=1:
+      return x
+    return fib(x-1)+fib(x-2)
+n=int(input())
+a=fib(n)
+print(a)
+output:
+5
+5
+
+d)Reverse of numbers using recursion
+def rev(x,res):
+   if x<=0:
+      return res
+   rem=x%10
+   res=res*10+rem
+   return rev(x//10,res)
+n=int(input())
+res=0
+a=rev(n,res)
+print(a)
+output:
+12345
+54321
+
+e)checking the number is power of 3 or not
+def power(i,x):
+   if 3**i==x:
+      return True
+   elif 3**i>=x:
+      return False
+   else:
+      return power(i+1,x)
+n=int(input())
+a=power(1,n)
+print(a)
+output:
+27						15
+True						False
+
+### ord function is used to convert int to askey value
+
+*class
+class person:
+    nickname="chintu"
+    roll="56"
+    height="6"
+    def run(self):
+        print("i can run"+self.nickname+self.roll)
+harsha=person()
+harsha.run()
+
+*constructor
+def __init__(self):  ##decalaration in python
+
+*example
+class person:
+  def __init__(self,x,y,z): ##double underscore
+       self.nickname=x
+       self.roll=y 
+       self.height=z 
+  def run(self):
+        print("i can run",self.nickname,self.roll,self.height)
+harsha=person("chintu",56,6)
+anjali=person("kavita",23,5)
+harsha.run()
+anjali.run()
+output:
+i can run chintu 56 6
+i can run kavita 23 5
+
+*abstraction
+abstract method is the method that does not have body
+abstract class is the class that have abstract method
+
+#abstract method
+class person:
+    def mobile():
+        pass
+
+#example of abstract method and class
+class mobile:
+   def functions(self):
+       pass
+class iphone(mobile):
+   def functions(self):
+       print("hey i am iphone")
+class sumsung(mobile):
+   def functions(self):
+       print("hey i am samsung")
+iphone13=iphone()
+iphone13.functions()
+sumsung3=sumsung()
+sumsung3.functions()
+output:
+hey i am iphone
+hey i am samsung
+
+*encapsulation 
+class car:
+    _engine="v8"    ##private variable are used with starting single underscore
+    _wires="blue"
+    def getter(self):
+        print(self._engine)
+        print(self._wires)
+    def setter(self,engine,wires):
+        self._engine=engine
+        self._wires=wires
+bmw=car()
+bmw.setter("v9","red")
+bmw.getter()
+output:
+v9
+red
+
+# encapsulation is used to accessing of private variable using getter and setter functions
+
+*inheritance
+--single inheritance
+--multiple
+--multilevel
+--hirarchey
+--hibride
+
+a)single inheritance
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+rahul=child()
+rahul.coolness()
+rahul.coding()
+output:
+parents are cool
+i know coding
+
+b)multilevel
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child(parents):
+    def coding(self):
+        print("i know coding")
+class child2(child):
+    def study(self):
+        print("i am going to the school")
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.study()
+
+c)multiple
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child:
+    def coding(self):
+        print("i know coding")
+class child2(parents,child):
+    def study(self):
+        print("i am going to the school")
+rahul=child2()
+rahul.coolness()
+rahul.coding()
+rahul.study()
+output:
+parents are cool
+i know coding
+i am going to the school
+
+d)hirarchey
+class parents:
+    def coolness(self):
+        print("parents are cool")
+class child1(parents):
+    def coding(self):
+        print("i know coding")
+class child2(parents):
+    def study(self):
+        print("i am going to the school")
+kavita=child1()
+kavita.coolness()
+kavita.coding()
+rahul=child2()
+rahul.coolness()
+rahul.study()
+output:
+parents are cool
+i know coding
+parents are cool
+i am going to the school
+
+e)hibrid 
+## it is the mixture of 2 inheritance below example contains hirarchey and multiple inheritance
+class parent:
+    def coolness(self):
+        print("parents are cool")
+class child1(parent):
+    def coding(self):
+        print("i know coding")
+class child2(parent):
+    def study(self):
+        print("i am going to the school")
+class grandchild(child1,child2):
+    def dancing(self):
+        print("i can dance")
+anu=grandchild()
+anu.coolness()
+anu.coding()
+anu.study()
+anu.dancing()
+kavita=child2()
+kavita.coolness()
+kavita.study()
+output:
+parents are cool
+i know coding
+i am going to the school
+i can dance
+parents are cool
+i am going to the school
+
+*polymorphism
+#in python overloading does not work properly
+# overriding is implemented using inheritance
+#example of overriding
+
+class addition:
+    def add(self,x,y):
+        print(x+y)
+class child(addition):
+    def add(self,x,y,z):
+        print(x+y+z)
+i=child()
+i.add(5,6,7)
+output:
+18
+
+*Data structure
+1)linear search
+l=[1,2,3,4,5,6,7,8,9,10]
+for i in l:
+    if i==7:    ## if i==19
+        print("found")
+        break
+else:
+    print("not found")
+output:			output: ## i==19		
+found				not found
+
+2)binary search
+l=[9,7,34,5,7,89,7,8]
+l.sort()
+print(l)
+i=0
+j=len(l)-1
+s=7      ## s=10
+while i<j:
+    mid=(i+j)//2
+    if l[mid]==s:
+        print(mid,"found")
+        break
+    elif l[mid]>s: 
+        j=mid-1
+    else:
+        i=mid+1
+else:
+    print("not found")
+output:							## s=10
+[5, 7, 7, 7, 8, 9, 34, 89]				[5, 7, 7, 7, 8, 9, 34, 89]
+3 found                                          not found
+
+#there are 5 sorting techniqe
+
+a)bubble sort 	## ascending the value by sending highest value to last	
+l=[9,7,97,10,5,1,0]
+for i in range(0,len(l)-1):
+    for j in range(0,len(l)-i-1):
+        if l[j]>l[j+1]:
+           l[j],l[j+1]=l[j+1],l[j]
+print(l)
+output:
+[0, 1, 5, 7, 9, 10, 97]
+
+b)selection sort		##ascending the value by sending smallest value to first
+b=[3,6,1,2,9,65,4,89]
+for i in range(0,len(b)-1):
+    m=i
+    for j in range(i+1,len(b)):
+        if b[m]>=b[j]:
+            m=j
+    b[i],b[m]=b[m],b[i]
+print(b)
+output:
+[1, 2, 3, 4, 6, 9, 65, 89]
+
+c)insertion sort
+in insertion sort will always start from 2nd number and create two parts that are sorted and unsorted
+b=[5,3,2,8,21,54,1]
+for i in range(1,len(b)):
+    j=i-1
+    a=b[i]
+    while j>=0 and b[j]>a:
+        b[j+1]=b[j]
+        j-=1
+    b[j+1]=a
+print(b)
+output:
+[1, 2, 3, 5, 8, 21, 54]
+
+$$$$$$$$$$$$$$$$$$$$ https://pythontutor.com/   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+d)merge sort (divide and concuring )
+# ans does not need another array it will sorting in original array and we need to create 2 temporary array
+# divide till 1 and concuring and compare 
+def merge(arr,beg,mid,end):
+    n1=mid-beg+1
+    n2=end-mid
+    i=j=0
+    left=arr[beg:mid+1]
+    right=arr[mid+1:end+1]
+    k=beg
+    while i<n1 and j<n2:
+        if left[i]<right[j]:
+            arr[k]=left[i]
+            i+=1
+        else:
+            arr[k]=right[j]
+            j+=1
+        k+=1
+    while i<n1:
+        arr[k]=left[i]
+        k+=1
+        i+=1
+    while j<n2:
+        arr[k]=right[j]
+        k+=1
+        j+=1
+def mergesort(arr,beg,end):
+    if beg<end:
+        mid=(beg+end)//2
+        mergesort(arr,beg,mid)
+        mergesort(arr,mid+1,end)
+        merge(arr,beg,mid,end)
+a=[8,6,4,9,1,5,2]
+b=0
+e=len(a)-1
+mergesort(a,b,e)
+print(a)
+output:
+[1, 2, 4, 5, 6, 8, 9]
+
+e)quicksort
+def partition(arr,low,high):
+    pivot=arr[low]
+    start=low+1
+    end=high
+    while True:
+        while start<=end and arr[start]<=pivot:
+            start+=1
+        while start<=end and arr[end]>pivot:
+            end-=1
+        if start<end:
+            arr[start],arr[end]=arr[end],arr[start]
+        else:
+            break
+    arr[low],arr[end]=arr[end],arr[low]
+    return end
+def quicksort(arr,beg,end):
+
+
+
+
+
+
+
+a=[8,6,4,9,1,5,2]
+b=0
+e=len(a)-1
+quicksort(a,b,e)
+print(a)
+output:
+[1, 2, 4, 5, 6, 8, 9]
+
+*stack 
+class stack:
+    def __init__(self):
+        self.top=-1
+        self.size=5
+        self.list=[]
+    def push(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.top=-1
+        self.list.append(data)
+    def pop(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.list.pop()
+    def peek(self):
+        print(self.list)
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        elif self.top>5:
+            print("out of index")
+        else:
+            print(self.list[self.top])
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4)
+s.push(5)
+s.pop()
+s.push(6)
+s.peek()
+output:
+[1, 2, 3, 4, 6]
+6
+
+*queue
+class queue:
+    def __init__(self):
+        self.rear=self.front=-1
+        self.size=5
+        self.list=[]
+    def enqueue(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.rear+=1
+        self.list.append(data)
+        if self.front==-1:
+            self.front+=1
+    def dqueue(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.list.pop(0)
+        self.front+=1
+    def display(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        print(self.list)
+q=queue()
+q.enqueue(5)
+q.enqueue(4)
+q.enqueue(3)
+q.enqueue(2)
+q.enqueue(1)
+q.dqueue()
+q.dqueue()
+q.enqueue(8)
+q.display()
+output:
+[3, 2, 1, 8]
+
+*evaluation of postfix expression is stack
+l="5678+-*" 
+a=[]
+for i in l:
+    if i.isdigit():
+        a.append(int(i))
+    else:
+        op2=a.pop()
+        op1=a.pop()
+        if i=="+":
+            a.append(op2+op1)
+        elif i=="-":
+            a.append(op2-op1)
+        elif i=="*":
+            a.append(op2*op1)
+        elif i=="/":
+            a.append(op2/op1)
+print(a)
+output:
+[45]
+
+*implement queue using stack
+# queue means first in first out so we need to create empty list that is s=[] and using stack we pop the element of l[] and put in s[] and again we need to pop s[] list and put in l[].
+#so in this way we can do first in first out. given below ex 1 ,2 are first in so in the output we delete it first.
+l=[1,2,3,4]
+s=[]
+def pop():
+    for i in range(len(l)):
+        s.append(l.pop())
+    s.pop()
+    for i in range(len(s)):
+        l.append(s.pop())
+pop()
+pop()
+print(l)
+output:
+[3, 4]
+
+*implement stack using queue
+
+
+*linked list
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatbeg(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+    def printlist(self):
+        curr=self.head
+        while(curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatbeg(5)
+l.printlist()
+output:
+5 -> 4 -> 3 -> 2 -> 1 -> null
+
+*linked list firstinsert, endinsert, and searching of element
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatbeg(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+    def insertatend(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode
+    def listsearch(self,key):
+        curr=self.head
+        while curr!=None:
+            if curr.data==key:
+                print("found")
+                break
+            curr=curr.next
+        else:
+            print("not found")
+    def printlist(self):
+        curr=self.head
+        while(curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.insertatend(6)
+l.printlist()
+l.listsearch(5)						#l.listsearch(8)
+output:  a)							b)
+4 -> 3 -> 2 -> 1 -> 5 -> 6 -> null              4 -> 3 -> 2 -> 1 -> 5 -> 6 -> null
+found								not found
+
+*linkedlist insertatany
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatbeg(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+    def insertatend(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode
+    def insertatany(self,value,key):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    newnode.next=curr.next
+                    curr.next=newnode
+                    break
+                curr=curr.next
+    def listsearch(self,key):
+        curr=self.head
+        while curr!=None:
+            if curr.data==key:
+                print("found")
+                break
+            curr=curr.next
+        else:
+            print("not found")
+    def printlist(self):
+        curr=self.head
+        while(curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.insertatend(6)
+l.insertatany(9,3)
+l.printlist()
+output:
+4 -> 3 -> 9 -> 2 -> 1 -> 5 -> 6 -> null
+
+* all operations --> insertatbeg, insertatend, insertatany, count, insertatmid, middle, listsearch
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def insertatbeg(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+    def insertatend(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr.next!=None:
+                curr=curr.next
+            curr.next=newnode
+    def insertatany(self,value,key):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    newnode.next=curr.next
+                    curr.next=newnode
+                    break
+                curr=curr.next
+    def count(self):
+        count=0
+        if self.head==None:
+            print("not found")
+        else:
+            curr=self.head
+            while curr!=None:
+                count+=1
+                curr=curr.next
+            print(count)
+    def insertatmid(self,value):
+        newnode=Node(value)
+        count=0
+        if self.head==None:
+            self.head=newnode
+        elif self.head.next==None:
+            self.head.next=newnode
+        else:
+            curr=self.head
+            while curr!=None:
+                count+=1
+                curr=curr.next
+            curr=self.head
+            for i in range(count//2):
+                curr=curr.next
+            newnode.next=curr.next
+            curr.next=newnode
+    def middle(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        elif self.head.next==None:
+            self.head.next=newnode
+        else:
+            fast=self.head
+            slow=self.head
+            while fast.next!=None and fast.next.next!=None:
+                fast=fast.next.next
+                slow=slow.next
+            newnode.next=slow.next
+            slow.next=newnode
+    def listsearch(self,key):
+        curr=self.head
+        while curr!=None:
+            if curr.data==key:
+                print("found")
+                break
+            curr=curr.next
+        else:
+            print("not found")
+    def printlist(self):
+        curr=self.head
+        while(curr!=None):
+            print(curr.data,"->",end=" ")
+            curr=curr.next
+        print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.count()
+##l.insertatmid(60)
+#l.insertatany(9,3)
+###l.listsearch(4)
+l.middle(80)
+l.printlist()
+
+
+*********trees**************
+class node:
+    def __init__(self,data):
+        self.left=None
+        self.data=data
+        self.right=None
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+def preorder(root):
+    if root:
+        prirnt(root.data)
+        preorder(root.left)
+        preorder(root.right)
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data)
+r=node(1)
+r.left=node(2)
+r.right=node(3)
+r.left.left=node(4)
+r.left.right=node(5)
+#inorder(r)
+#preorder(r)
+postorder(r)
+output:
+inorder				preorder				postorder
+4					1						4
+2					2						5
+5					4						2
+1					5						3
+3					3						1
+
+
+*************binary tree using functions ************
+class node:
+    def __init__(self,data):
+        self.left=None
+        self.data=data
+        self.right=None
+class trees:
+    def __init__(self):
+        self.root=None
+    def insert(self,value):
+        newnode=node(value)
+        if self.root is None:
+            self.root=newnode
+        else:
+            curr=self.root
+            while True:
+                if value<=curr.data:
+                    if curr.left is None:
+                        curr.left=newnode
+                        break 
+                    else:
+                        curr=curr.left 
+                else:
+                    if curr.right is None:
+                        curr.right=newnode
+                        break 
+                    else:
+                        curr=curr.right
+def inorder(root):                    #####here we write inorder function outside of the class
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+r=trees()
+r.insert(5)
+r.insert(2)
+r.insert(4)
+inorder(r.root)
+output:
+2
+4
+5
+
+***binary tree using method and recurrsion
+class node:
+    def __init__(self,data):
+        self.left=None
+        self.data=data
+        self.right=None
+class trees:
+    def __init__(self):
+        self.root=None
+    def insert(self,value):
+        newnode=node(value)
+        if self.root is None:
+            self.root=newnode
+        else:
+            curr=self.root
+            while True:
+                if value<=curr.data:
+                    if curr.left is None:
+                        curr.left=newnode
+                        break 
+                    else:
+                        curr=curr.left 
+                else:
+                    if curr.right is None:
+                        curr.right=newnode
+                        break 
+                    else:
+                        curr=curr.right
+    
+    def inorder(self):
+        self.inorderhelper(self.root)
+    def inorderhelper(self,root):
+        if root:
+           self.inorderhelper(root.left)
+           print(root.data)
+           self.inorderhelper(root.right)
+r=trees()
+r.insert(5)
+r.insert(2)
+r.insert(4)
+r.inorder()
+output
+2
+4
+5
+
+***adjacent matrix in graph***
+class Graph:
+    def __init__(self):
+        self.matrix=[[0]*5 for i in range(5)]
+        #print(self.matrix)
+    def addvertex(self,a,b):
+        self.matrix[a][b]=1
+    def print(self):
+        for i in self.matrix:
+            print(i)
+g=Graph()
+g.addvertex(1,2)
+g.addvertex(2,2)
+g.addvertex(3,4)
+g.addvertex(4,1)
+g.print()
+output:
+[0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0]
+[0, 0, 1, 0, 0]
+[0, 0, 0, 0, 1]
+[0, 1, 0, 0, 0]
+
+***adjacent list in graph***
+class Graph:
+    def __init__(self):
+        self.matrix={}
+        #print(self.matrix)
+    def addvertex(self,a,b):
+        if a not in self.matrix:
+            self.matrix[a]=[b]
+        else:
+            self.matrix[a].append(b)
+    def print(self):
+        print(self.matrix)
+g=Graph()
+g.addvertex(1,2)
+g.addvertex(2,2)
+g.addvertex(3,4)
+g.addvertex(4,1)
+g.print()
+output:
+{1: [2], 2: [2], 3: [4], 4: [1]}
+
+***breadth first search (level order search)***
+class Graph:
+    def __init__(self):
+        self.matrix={}
+        #print(self.matrix)
+    def addvertex(self,a,b):
+        if a not in self.matrix:
+            self.matrix[a]=[b]
+        else:
+            self.matrix[a].append(b)
+    def print(self):
+        print(self.matrix)
+    def bfs(self,data):
+        visited=[]
+        queue=[data]
+        while queue:
+            vertex=queue.pop(0)
+            print(vertex)
+            if vertex in self.matrix:
+                for i in self.matrix[vertex]:
+                    if i not in visited:
+                        visited.append(i)
+                        queue.append(i)
+g=Graph()
+g.addvertex(1,2)
+g.addvertex(1,3)
+g.addvertex(2,4)
+g.addvertex(2,5)
+g.addvertex(3,6)
+g.addvertex(3,7)
+g.bfs(1)
+g.print()
+output:
+1
+2
+3
+4
+5
+6
+7
+{1: [2, 3], 2: [4, 5], 3: [6, 7]}
+
+***dfs(depth first search***
+class Graph:
+    def __init__(self):
+        self.matrix={}
+        #print(self.matrix)
+    def addvertex(self,a,b):
+        if a not in self.matrix:
+            self.matrix[a]=[b]
+        else:
+            self.matrix[a].append(b)
+    def print(self):
+        print(self.matrix)
+    def dfs(self,data):
+        visited=[]
+        stack=[data]
+        while stack:
+            vertex=stack.pop()
+            print(vertex)
+            if vertex in self.matrix:
+                for i in self.matrix[vertex]:
+                    if i not in visited:
+                        visited.append(i)
+                        stack.append(i)
+g=Graph()
+g.addvertex(1,2)
+g.addvertex(1,3)
+g.addvertex(2,4)
+g.addvertex(2,5)
+g.addvertex(3,6)
+g.addvertex(3,7)
+g.dfs(1)
+g.print()
+output:
+1
+3
+7
+6
+2
+5
+4
+{1: [2, 3], 2: [4, 5], 3: [6, 7]}
+
+
+
+
+
+
+
+
+
+
+                 
+
+
+                 
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+                    
+ 
+    
+
+
+        
+    
+
+
+
+
+        
+    
+
+
+
+
+
+
+               
+            
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   
+
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
